@@ -8,6 +8,10 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
+  "scripts": {
+    "start": "deno task prod",
+    "start:pm2": "pm2 start deno --name='imagebot' -- task prod"
+  },
   "dependencies": {
     "@grammyjs/runner": "^2.0.3",
     "axios": "^1.6.8",

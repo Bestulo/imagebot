@@ -1,15 +1,21 @@
-# imagebot
+### Prerequisites
 
-To install dependencies:
+What things you need to install the software and how to install them:
 
-```bash
-bun install
+- Deno: Follow the [installation guide](https://deno.land/#installation) on the official Deno website.
+
+### Running the Project
+
+To run the project, use the following command:
+
+```
+deno task prod
 ```
 
-To run:
+### Running with PM2
 
-```bash
-bun run index.ts
+If you want to run the project with PM2, use the following command:
+
 ```
-
-This project was created using `bun init` in bun v1.0.25. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+pm2 start --interpreter="deno" --name="imagebot" task prod
+```
