@@ -106,15 +106,17 @@ const processCommand2 = async (ctx: Context, endpoint: string) => {
   }
 };
 
-bot.command("dalle3", (ctx) => processCommand1(ctx, apiEndpoints.dalle3));
-bot.command("sdxl", (ctx) => processCommand2(ctx, apiEndpoints.sdxl));
+bot.command(["imagine", "dalle3"], (ctx) =>
+  processCommand1(ctx, apiEndpoints.dalle3)
+);
+// bot.command("sdxl", (ctx) => processCommand2(ctx, apiEndpoints.sdxl));
 bot.command("oj", (ctx) => processCommand2(ctx, apiEndpoints.oj));
 bot.command("start", (ctx) =>
-  ctx.reply("Welcome! Use /dalle3, /dalle2, /sdxl or /oj to generate images.")
+  ctx.reply("Welcome! Use /imagine or /oj to generate images.")
 );
 bot.api.setMyCommands([
-  { command: "dalle3", description: "Generate images using DALL-E 3." },
-  { command: "sdxl", description: "Generate images using SDXL." },
+  { command: "imagine", description: "Generate images using DALL-E 3." },
+  // { command: "sdxl", description: "Generate images using SDXL." },
   { command: "oj", description: "Generate images using Open Journey." },
   { command: "start", description: "Start the bot." },
 ]);

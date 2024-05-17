@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "deno task prod",
-    "start:pm2": "pm2 start deno --name='imagebot' -- task prod"
+    "start:pm2": "pm2 start deno --name='imagebot' -- task prod",
+    "restart": "pm2 restart imagebot --update-env"
   },
   "dependencies": {
     "@grammyjs/runner": "^2.0.3",
